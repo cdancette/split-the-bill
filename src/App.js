@@ -51,16 +51,16 @@ class FormContainer extends Component {
       const remaining = this.state.total - sumAmountPersons;
       remainingEachPeople = remaining / persons.length;
     }
-    persons.map(p => {
+    persons.forEach(p => {
       p.amountDueHT = p.amountEntered + remainingEachPeople;
     });
     
 
-    persons.map(p => {
+    persons.forEach(p => {
       p.ratio = p.amountDueHT / totalHT;
     })
 
-    persons.map(p => {
+    persons.forEach(p => {
       p.amountDueTTC = p.amountDueHT + p.ratio * taxes
     })
 
